@@ -60,6 +60,8 @@ jobs:
           select-os: '["windows-latest","macos-latest"]'
           select-tests: true
           label: full-ci
+      - name: Trial only, fail the selection
+        run: exit 1
 
   # The Linux leg keeps the compiled workspace crates between runs (`cache-workspace-crates`): each
   # main run saves a rolling cache entry of its own, every run restores the newest one, and Cargo
